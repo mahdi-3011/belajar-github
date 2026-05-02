@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayam Goreng Crispy Kres!</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#FFFBEB', // Background hangat (kuning sangat muda)
+                            yellow: '#F59E0B', // Kuning keemasan untuk aksen
+                            orange: '#EA580C', // Oranye untuk tombol CTA
+                            brown: '#78350F', // Cokelat untuk teks utama (judul)
+                            text: '#4B5563', // Abu-abu gelap untuk teks paragraf
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animasi Kustom */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Pulse Effect untuk tombol Floating WA */
+        <blade keyframes|%20pulse-ring%20%7B>0% {
+            transform: scale(0.8);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+
+        100% {
+            transform: scale(0.8);
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+        }
+
+        .wa-float-btn {
+            animation: pulse-ring 2s infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-light text-brand-text font-sans antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-drumstick-bite text-3xl text-brand-orange"></i>
+                    <span class="font-bold text-2xl text-brand-brown tracking-tight">Kres<span
+                            class="text-brand-orange">Chicken</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beranda"
+                        class="text-brand-brown hover:text-brand-orange font-medium transition-colors">Beranda</a>
+                    <a href="#tentang"
+                        class="text-brand-brown hover:text-brand-orange font-medium transition-colors">Tentang Kami</a>
+                    <a href="#menu"
+                        class="text-brand-brown hover:text-brand-orange font-medium transition-colors">Menu</a>
+                    <a href="#keunggulan"
+                        class="text-brand-brown hover:text-brand-orange font-medium transition-colors">Keunggulan</a>
+                    <a href="#testimoni"
+                        class="text-brand-brown hover:text-brand-orange font-medium transition-colors">Testimoni</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-brown hover:text-brand-orange focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#beranda"
+                    class="block px-3 py-2 text-base font-medium text-brand-brown hover:bg-brand-light rounded-md">Beranda</a>
+                <a href="#tentang"
+                    class="block px-3 py-2 text-base font-medium text-brand-brown hover:bg-brand-light rounded-md">Tentang
+                    Kami</a>
+                <a href="#menu"
+                    class="block px-3 py-2 text-base font-medium text-brand-brown hover:bg-brand-light rounded-md">Menu</a>
+                <a href="#keunggulan"
+                    class="block px-3 py-2 text-base font-medium text-brand-brown hover:bg-brand-light rounded-md">Keunggulan</a>
+                <a href="#testimoni"
+                    class="block px-3 py-2 text-base font-medium text-brand-brown hover:bg-brand-light rounded-md">Testimoni</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section id="beranda" class="pt-28 pb-16 md:pt-36 md:pb-24 px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+            <!-- Text Content -->
+            <div
+                class="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left fade-in-up">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-brand-yellow/20 text-brand-orange font-semibold text-sm mb-4">100%
+                    Halal & Higienis</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-brown leading-tight mb-6">
+                    Sensasi <span class="text-brand-orange">Krenyes</span><br>di Setiap Gigitan!
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+                    Nikmati ayam goreng crispy dengan bumbu rahasia keluarga yang meresap sampai ke tulang. Digoreng
+                    dadakan, dijamin bikin ketagihan!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="https://wa.me/6281234567890?text=Halo%20KresChicken,%20saya%20ingin%20memesan%20ayam%20gorengnya."
+                        target="_blank"
+                        class="flex items-center justify-center gap-2 bg-brand-orange hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-full shadow-lg shadow-orange-500/30 transition-all transform hover:scale-105">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Pesan Sekarang
+                    </a>
+                    <a href="#menu"
+                        class="flex items-center justify-center gap-2 bg-white border-2 border-brand-orange text-brand-orange hover:bg-brand-light font-bold py-4 px-8 rounded-full transition-all">
+                        Lihat Menu
+                    </a>
+                </div>
+            </div>
+            <!-- Image Content -->
+            <div class="w-full md:w-1/2 relative fade-in-up" style="transition-delay: 0.2s;">
+                <!-- Decorative blob background -->
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-brand-yellow/30 rounded-full blur-3xl -z-10">
+                </div>
+                <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Ayam Goreng Crispy"
+                    class="w-full h-auto object-cover rounded-3xl shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+
+                <!-- Floating badge -->
+                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce"
+                    style="animation-duration: 3s;">
+                    <div
+                        class="bg-yellow-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500 font-medium">Rating Pelanggan</p>
+                        <p class="text-lg font-bold text-brand-brown">4.9 / 5.0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Tentang Kami -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 fade-in-up">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Proses Memasak" class="rounded-3xl shadow-lg w-full object-cover h-[400px]">
+                </div>
+                <div class="w-full md:w-1/2 fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 class="text-brand-orange font-bold text-lg mb-2 uppercase tracking-wide">Tentang Kami</h2>
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-brand-brown mb-6">Cerita Rasa dari Dapur
+                        Keluarga</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Berawal dari resep rahasia keluarga yang diwariskan turun-temurun, <strong>KresChicken</strong>
+                        hadir untuk mengobati kerinduan Anda akan ayam goreng crispy yang gurih, renyah di luar, dan
+                        *juicy* di dalam.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Kami hanya menggunakan ayam segar berkualitas tinggi dan rempah-rempah pilihan. Proses marinasi
+                        yang lama memastikan bumbu meresap sempurna. Setiap gigitan adalah janji rasa otentik yang tidak
+                        akan Anda temukan di tempat lain.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand-orange text-2xl"></i>
+                            <span class="font-semibold text-brand-brown">Bumbu Asli</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand-orange text-2xl"></i>
+                            <span class="font-semibold text-brand-brown">Ayam Segar</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand-orange text-2xl"></i>
+                            <span class="font-semibold text-brand-brown">100% Halal</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand-orange text-2xl"></i>
+                            <span class="font-semibold text-brand-brown">Tanpa Pengawet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Menu -->
+    <section id="menu" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-brand-orange font-bold text-lg mb-2 uppercase tracking-wide">Pilihan Menu</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-brand-brown">Pilih Paket Favoritmu</h3>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Harga bersahabat, porsi memuaskan. Cocok untuk dinikmati
+                    sendiri maupun bersama keluarga tercinta.</p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Menu Item 1 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group fade-in-up">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1606683510526-70e6cd164993?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Paket Personal"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div
+                            class="absolute top-4 right-4 bg-brand-yellow text-brand-brown font-bold px-3 py-1 rounded-full text-sm">
+                            Best Seller</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold text-brand-brown mb-2">Paket Personal</h4>
+                        <p class="text-gray-500 mb-4 text-sm">1 Ayam Crispy (Dada/Paha), 1 Nasi Panas, 1 Es Teh Manis.
+                        </p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-2xl font-extrabold text-brand-orange">Rp 18.000</span>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20pesan%20Paket%20Personal."
+                                target="_blank"
+                                class="bg-brand-orange hover:bg-orange-700 text-white p-3 rounded-full transition-colors">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group fade-in-up"
+                    style="transition-delay: 0.2s;">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1614398751058-eb2e0bf63e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Paket Geprek"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold text-brand-brown mb-2">Paket Ayam Pedas</h4>
+                        <p class="text-gray-500 mb-4 text-sm">1 Ayam Crispy Balur Saus Pedas Spesial, 1 Nasi Panas.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-2xl font-extrabold text-brand-orange">Rp 20.000</span>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20pesan%20Paket%20Ayam%20Pedas."
+                                target="_blank"
+                                class="bg-brand-orange hover:bg-orange-700 text-white p-3 rounded-full transition-colors">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group fade-in-up"
+                    style="transition-delay: 0.4s;">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="Paket Keluarga"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold text-brand-brown mb-2">Paket Keluarga</h4>
+                        <p class="text-gray-500 mb-4 text-sm">5 Potong Ayam Crispy Campur, 4 Nasi Panas, 4 Teh Botol.
+                        </p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-2xl font-extrabold text-brand-orange">Rp 85.000</span>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20pesan%20Paket%20Keluarga."
+                                target="_blank"
+                                class="bg-brand-orange hover:bg-orange-700 text-white p-3 rounded-full transition-colors">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Full Menu CTA -->
+            <div class="mt-12 text-center fade-in-up">
+                <a href="https://wa.me/6281234567890?text=Halo,%20boleh%20minta%20daftar%20menu%20lengkapnya?"
+                    target="_blank"
+                    class="inline-flex items-center gap-2 text-brand-orange font-bold hover:text-brand-brown transition-colors">
+                    Lihat Daftar Menu Lengkap <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Keunggulan -->
+    <section id="keunggulan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-brand-orange font-bold text-lg mb-2 uppercase tracking-wide">Kenapa Memilih Kami?</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-brand-brown">Kualitas Adalah Prioritas</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Keunggulan 1 -->
+                <div
+                    class="text-center p-6 rounded-2xl bg-brand-light hover:-translate-y-2 transition-transform duration-300 fade-in-up">
+                    <div
+                        class="w-20 h-20 mx-auto bg-orange-100 text-brand-orange rounded-full flex items-center justify-center text-3xl mb-6">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-brown mb-3">Rasa Juara</h4>
+                    <p class="text-gray-600 text-sm">Bumbu meresap sempurna hingga ke tulang, renyah di luar juicy di
+                        dalam.</p>
+                </div>
+
+                <!-- Keunggulan 2 -->
+                <div class="text-center p-6 rounded-2xl bg-brand-light hover:-translate-y-2 transition-transform duration-300 fade-in-up"
+                    style="transition-delay: 0.2s;">
+                    <div
+                        class="w-20 h-20 mx-auto bg-orange-100 text-brand-orange rounded-full flex items-center justify-center text-3xl mb-6">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-brown mb-3">Harga Ramah</h4>
+                    <p class="text-gray-600 text-sm">Porsi kenyang dengan harga yang sangat terjangkau untuk semua
+                        kalangan.</p>
+                </div>
+
+                <!-- Keunggulan 3 -->
+                <div class="text-center p-6 rounded-2xl bg-brand-light hover:-translate-y-2 transition-transform duration-300 fade-in-up"
+                    style="transition-delay: 0.4s;">
+                    <div
+                        class="w-20 h-20 mx-auto bg-orange-100 text-brand-orange rounded-full flex items-center justify-center text-3xl mb-6">
+                        <i class="fa-solid fa-pump-soap"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-brown mb-3">Higienis</h4>
+                    <p class="text-gray-600 text-sm">Dapur bersih dan proses masak yang sangat menjaga standar
+                        kebersihan.</p>
+                </div>
+
+                <!-- Keunggulan 4 -->
+                <div class="text-center p-6 rounded-2xl bg-brand-light hover:-translate-y-2 transition-transform duration-300 fade-in-up"
+                    style="transition-delay: 0.6s;">
+                    <div
+                        class="w-20 h-20 mx-auto bg-orange-100 text-brand-orange rounded-full flex items-center justify-center text-3xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brand-brown mb-3">Layanan Cepat</h4>
+                    <p class="text-gray-600 text-sm">Pesan via WhatsApp, langsung disiapkan tanpa harus menunggu lama.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Testimoni -->
+    <section id="testimoni" class="py-20 bg-brand-yellow/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-brand-orange font-bold text-lg mb-2 uppercase tracking-wide">Testimoni Pelanggan</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-brand-brown">Apa Kata Mereka?</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm relative fade-in-up">
+                    <i class="fa-solid fa-quote-left text-4xl text-brand-yellow/30 absolute top-6 right-6"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Ayamnya beneran crispy dan bumbunya kerasa banget. Anak-anak
+                        saya suka banget makan di sini. Langganan tiap minggu!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">
+                            A</div>
+                        <div>
+                            <h5 class="font-bold text-brand-brown">Andi Sucipto</h5>
+                            <p class="text-xs text-gray-500">Pelanggan Setia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm relative fade-in-up" style="transition-delay: 0.2s;">
+                    <i class="fa-solid fa-quote-left text-4xl text-brand-yellow/30 absolute top-6 right-6"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Gampang banget pesannya lewat WhatsApp, adminnya ramah dan
+                        cepat balas. Pas nyampe rumah ayamnya masih anget dan garing."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">
+                            R</div>
+                        <div>
+                            <h5 class="font-bold text-brand-brown">Rina Wati</h5>
+                            <p class="text-xs text-gray-500">Ibu Rumah Tangga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm relative fade-in-up" style="transition-delay: 0.4s;">
+                    <i class="fa-solid fa-quote-left text-4xl text-brand-yellow/30 absolute top-6 right-6"></i>
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Harga murah tapi rasanya nggak murahan. Sambalnya juga mantap
+                        pedasnya. Cocok buat kantong mahasiswa kayak saya."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">
+                            B</div>
+                        <div>
+                            <h5 class="font-bold text-brand-brown">Budi Santoso</h5>
+                            <p class="text-xs text-gray-500">Mahasiswa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer / Kontak -->
+    <footer id="kontak" class="bg-brand-brown text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                <!-- Info Brand -->
+                <div class="fade-in-up">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-drumstick-bite text-3xl text-brand-yellow"></i>
+                        <span class="font-bold text-2xl tracking-tight">Kres<span
+                                class="text-brand-orange">Chicken</span></span>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Pilihan tepat untuk menikmati hidangan ayam crispy
+                        yang gurih, lezat, dan terjangkau. Kami siap melayani pesanan makan di tempat, bawa pulang, dan
+                        katering.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition-colors"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-orange transition-colors"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Jam Buka -->
+                <div class="fade-in-up" style="transition-delay: 0.2s;">
+                    <h4 class="text-xl font-bold mb-6 text-brand-yellow">Jam Operasional</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span>Senin - Jumat</span>
+                            <span>10:00 - 21:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span>Sabtu - Minggu</span>
+                            <span>09:00 - 22:00</span>
+                        </li>
+                        <li class="flex justify-between pb-2 text-brand-orange font-semibold">
+                            <span>Hari Libur Nasional</span>
+                            <span>Tetap Buka</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kontak Info -->
+                <div class="fade-in-up" style="transition-delay: 0.4s;">
+                    <h4 class="text-xl font-bold mb-6 text-brand-yellow">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot mt-1 text-brand-orange"></i>
+                            <span>Jl. Sudirman No. 123, Pusat Kuliner, Kota Jakarta Selatan, 12345</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-phone text-brand-orange"></i>
+                            <span>+62 812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-envelope text-brand-orange"></i>
+                            <span>halo@kreschicken.com</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890?text=Halo%20KresChicken,%20saya%20mau%20pesan" target="_blank"
+                        class="mt-6 inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold py-3 px-6 rounded-full transition-colors w-full justify-center">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Chat WhatsApp Sekarang
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 KresChicken. All rights reserved. Dibuat untuk UMKM Indonesia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo%20KresChicken,%20saya%20ingin%20memesan%20ayam%20goreng."
+        target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-xl hover:bg-[#1ebd5a] transition-colors wa-float-btn cursor-pointer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Menutup mobile menu saat link diklik
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer untuk Animasi Scroll (Fade In Up)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Hanya animasi sekali
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((elem) => {
+            observer.observe(elem);
+        });
+    </script>
+</body>
+
+</html>
